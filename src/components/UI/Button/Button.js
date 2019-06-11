@@ -1,7 +1,11 @@
 import React from "react";
 
 const Button = props => (
-  <button className={[Button, props.btnType].join(" ")} onClick={props.clicked}>
+  <button
+    disabled={props.disabled}
+    className={[Button, props.btnType].join(" ")}
+    onClick={props.clicked}
+  >
     {props.children}
   </button>
 );
