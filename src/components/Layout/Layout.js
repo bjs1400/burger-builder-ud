@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 
 import Auxilliary from "../../hoc/Auxilliary"; // higher order component
 import classes from "./Layout.css";
@@ -14,11 +15,18 @@ class Layout extends Component {
     this.setState({ showSideDrawer: false });
   };
 
+  const mapStateToProps = (state) => {
+    return {
+      isAuthenticated: state.auth.token !== null
+    }
+  };
+
   render() {
     return (
       <Auxilliary>
-        <Toolbar />
+        <Toolbar isAuth={this.props.isAuthenticated}/>
         <SideDrawer
+          isAuth={this.props.isAuthenticated}
           open={this.state.showSideDrawer}
           closed={this.sideDrawerClosedHandler}
         />
@@ -28,4 +36,4 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+export default connect(mapStateToProps)(Layout);

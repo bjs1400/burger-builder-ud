@@ -1,6 +1,4 @@
 import * as actionTypes from "../actions/actionTypes";
-import { bindActionCreators } from "../../../../../../AppData/Local/Microsoft/TypeScript/2.9/node_modules/redux";
-import { bindActionCreators } from "../../../../../../AppData/Local/Microsoft/TypeScript/2.9/node_modules/redux";
 
 const initialState = {
   orders: [],
